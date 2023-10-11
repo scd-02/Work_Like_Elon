@@ -1,23 +1,8 @@
-import { useState } from "react";
 import Header from '../Components/Header';
 import '../HomePage/TODO.css';
+import '../TaskBar/TaskList';
 
 const TODO = () => {
-
-  const [list, setList] = useState([]);
-  const [value, setValue] = useState("");
-
-  const addToList = () =>{
-    let tempArr = list;
-    tempArr.push(value);
-    setList(tempArr);
-    setValue("");
-  };
-
-  const deleteItem = (index) => {
-    let temp = list.filter((item, i) => i !== index);
-    setList(temp);
-  };
 
   return( 
     <div className="todo">
@@ -34,15 +19,11 @@ const TODO = () => {
             <div className="list-container">
               <h4>Today</h4>
               <div className="list">
-                <ul>
-                  {/* {list.length > 0 && 
-                    list.map((item, i) => <li onClick={() => deleteItem(i)} >{item}</li>)
-                  } */}
-                  <li class="list-group-item list-group-item-success mb-2">A simple success list group item</li>
-                  <li class="list-group-item list-group-item-danger mb-2">A simple danger list group item</li>
-                  <li class="list-group-item list-group-item-warning mb-2">A simple warning list group item</li>
-                  <li class="list-group-item list-group-item-info mb-2">A simple info list group item</li>
-                </ul>
+                {/* <ul>
+                  {list.length > 0 && 
+                    list.map((item, i) => <li className="mb-2" onClick={() => deleteItem(i)} >{item}</li>)
+                  }
+                </ul> */}
               </div>
             </div>
             <div className="quote d-flex justify-content-center">
