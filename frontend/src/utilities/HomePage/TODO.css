@@ -12,9 +12,9 @@
     border: 0.5px solid #474646;
     /* height: 500px; */
 }
-.day{
+.date h2{
+    padding-top: 5px;
     color: #FFFFFF;
-    font-size: xx-large;
 }
 .list-container{
     padding-left: 40px;
@@ -29,7 +29,7 @@
     list-style-type: none;
     display: inline-block;
 }
-.quote p{
+.quote q{
     color: white;
     font-weight: bold;
 }
