@@ -1,0 +1,45 @@
+.Content{
+    padding: 50px;
+    background-image: url("https://media.istockphoto.com/id/1314054062/vector/abstract-simply-background-with-natural-line-arts.jpg?s=612x612&w=0&k=20&c=QtBb0IP9iQISX0jsNVdOgbX7VCrCfXWpA9uUMd9c4q4=");
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.box{
+    padding-bottom: 10px;
+    background-color: #201f1f;
+    box-shadow: 10px 10px 15px 1px rgba(0, 0, .2);
+    border: 0.5px solid #474646;
+    /* height: 500px; */
+}
+.title{
+    color: white;
+    padding: 10px 20px 0px; 
+}
+.form{
+    padding: 0px 50px 20px;
+}
+.form label{
+    color: #24F1F1;
+    display: grid;
+    place-items: center;
+}
+.form input{
+    border: 2px solid #24F1F1;
+    border-radius: 20px;
+    background-color: #201f1f;
+    color: #FFFFFF;
+}
+.form .tag a{
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+    color: #9B9B9B;
+}
+.form .tag a:hover{
+    color: #FFFFFF;
+}
+/* .footer img{
+    width: 100px;
+} */

@@ -1,0 +1,50 @@
+.Content{
+    padding: 50px;
+    background-image: url("https://img.freepik.com/premium-vector/modern-abstract-background_200180-196.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.box{
+    padding-bottom: 10px;
+    background-color: #201f1f;
+    box-shadow: 10px 10px 15px 1px rgba(0, 0, .2);
+    border: 0.5px solid #474646;
+    /* height: 500px; */
+}
+.day{
+    color: #FFFFFF;
+    font-size: xx-large;
+}
+.list-container{
+    padding-left: 40px;
+}
+.list-container h4{
+    color: #FFFFFF;
+}
+.list ul li{
+    background-color: #e8e6e6;
+    height: 30px;
+    border-radius: 5px;
+    list-style-type: none;
+    display: inline-block;
+}
+.quote p{
+    color: white;
+    font-weight: bold;
+}
+/* .footer, .quote{
+    position: relative;
+    top: 200px;
+} */
+.b1{
+    border: 2px solid #24F1F1;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+.b2{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
