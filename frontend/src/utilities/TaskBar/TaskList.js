@@ -57,17 +57,17 @@ const TaskList = () => {
       <div className="Content">
         <div className="box">
           <Header />
+          <br />
           <div className="form">
             <div class="mb-2">
-              <label class="form-label">
-                Title <sup>*</sup>
-              </label>
+              <label class="form-label">Title *</label>
               <input
                 type="text"
                 class="form-control"
                 placeholder="Task Title"
                 onChange={handleTitleChange}
                 value={title}
+                required
               />
             </div>
             <div class="mb-2">
@@ -78,12 +78,11 @@ const TaskList = () => {
                 placeholder="Task Description"
                 onChange={handleDescriptionChange}
                 value={description}
+                required
               />
             </div>
             <div class="mb-2">
-              <label class="form-label">
-                Duration <sup>*</sup>
-              </label>
+              <label class="form-label">Duration *</label>
               <input
                 type="time"
                 step="1"
@@ -93,6 +92,7 @@ const TaskList = () => {
                 onChange={(ev) => {
                   setTime(ev.target.value);
                 }}
+                required
               />
             </div>
             <div className="btn d-flex justify-content-around">
@@ -113,10 +113,6 @@ const TaskList = () => {
             </div>
           </div>
           <div className="footer">
-            <div className="pomodoro d-flex justify-content-between">
-              <p className="tile">PomoDoro</p>
-              {/* <ReactSwitch checked={checked} onChange={handleCheck} /> */}
-            </div>
             <div className="setting d-flex justify-content-between">
               <p className="tile">Settings</p>
               <img

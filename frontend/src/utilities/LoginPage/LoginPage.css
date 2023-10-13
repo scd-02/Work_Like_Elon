@@ -6,9 +6,10 @@
     background-size: cover;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-.box{
+.box1{
     padding-bottom: 10px;
-    background-color: #201f1f;
+    background-image: url("https://img.freepik.com/premium-photo/top-view-autumn-workspace-with-copying-area-laptops-office-supplies-leaves_512343-304.jpg");
+    background-size: cover;
     box-shadow: 10px 10px 15px 1px rgba(0, 0, .2);
     border: 0.5px solid #474646;
     /* height: 500px; */
@@ -41,5 +42,5 @@
     color: #FFFFFF;
 }
 /* .footer img{
-    width: 100px;
+    width: 300px;
 } */

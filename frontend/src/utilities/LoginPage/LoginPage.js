@@ -1,10 +1,16 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "../Components/Header";
 import "../LoginPage/LoginPage.css";
 
 const LoginPage = () => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/TODO");
+  };
 
   const handleChangeUsername = (e) => {
     setUserName(e.target.value);
@@ -14,19 +20,19 @@ const LoginPage = () => {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
 
-    // store to databse
+  //   // store to databse
     
-    // redirect TODO page
+  //   // redirect TODO page
 
-  };
+  // };
 
   return (
     <div className="login-page">
       <div className="Content">
-        <div className="box">
+        <div className="box1">
           <Header />
           <div className="title">
             <h5 className="d-flex justify-content-center">Login Here</h5>
@@ -41,6 +47,7 @@ const LoginPage = () => {
                 placeholder="Username or e-mail"
                 value={userName}
                 onChange={handleChangeUsername}
+                required
               />
             </div>
             <div>
@@ -51,6 +58,7 @@ const LoginPage = () => {
                 placeholder="Password"
                 value={password}
                 onChange={handleChangePassword}
+                required
               />
             </div>
             <div className="tag mt-1">
@@ -60,19 +68,11 @@ const LoginPage = () => {
               <button
                 type="submit"
                 class="btn btn-outline-success"
-                onClick={handleSubmit}
+                onClick={handleClick}
               >
                 Login
               </button>
             </div>
-          </div>
-          <div className="footer">
-            <img
-              src="https://d12y7sg0iam4lc.cloudfront.net/s/img/marketing/top-todo-app/to-do-list.png"
-              alt="footer"
-              width="400px"
-              height="150px"
-            />
           </div>
         </div>
       </div>
