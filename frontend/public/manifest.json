@@ -2,7 +2,7 @@
   "name": "Work_like_Elon",
   "version": "0.1.0",
   "description": "A chrome extnsion for software developet to boost their productivity",
-  "permission": [
+  "permissions": [
     "storage",
     "tabs"
   ],
