@@ -24,7 +24,7 @@ const Quotes = () => {
   //   fetch(url, {
   //     method: "GET",
   //     headers: {
-  //       "X-Api-Key": "8BS9rVOKrFx0wJ38M9E4v4KqeM1SAc3M80MxmgCX",
+  //       "X-Api-Key": "",
   //     },
   //   })
   //     .then((response) => response.json())
