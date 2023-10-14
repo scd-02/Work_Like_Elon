@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import Header from "../Components/Header";
 import "../HomePage/TODO.css";
 import "../TaskBar/TaskList";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
 
 // import Quotes from './Quotes';
 
@@ -14,19 +16,14 @@ const TODO = () => {
   //   setList(temp);
   // };
 
-  const items = (localStorage.getItem("task-list"))
-  console.log(items)
+  const items = localStorage.getItem("task-list");
+  console.log(items);
 
   const navigate = useNavigate();
 
   const handleClick = () => {
     navigate("/TaskList");
   };
-
-  useEffect(() => {
-    const tooltips = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-    tooltips.forEach((tooltip) => new window.bootstrap.Tooltip(tooltip));
-  }, []);
 
   return (
     <div className="todo">
@@ -55,56 +52,78 @@ const TODO = () => {
 
           {/* add functionaliyt and navigation to each pages.... */}
           <div className="footer d-flex justify-content-around">
-            <button className="btn">
-              <img
-                className="b1"
-                src="https://cdn-icons-png.flaticon.com/128/6878/6878705.png"
-                alt="PlayList"
-                data-bs-toggle="tooltip"
-                data-bs-placement="top"
-                data-bs-original-title="PlayList"
-              />
-            </button>
-            <button className="btn">
-              <img
-                className="b1"
-                src="https://cdn-icons-png.flaticon.com/128/10274/10274647.png"
-                alt="notification"
-                data-bs-toggle="tooltip"
-                data-bs-placement="top"
-                data-bs-original-title="notifications"
-              />
-            </button>
-            <button className="btn" onClick={handleClick}>
-              <img
-                className="b2"
-                src="https://cdn-icons-png.flaticon.com/128/4315/4315609.png"
-                alt="add"
-                data-bs-toggle="tooltip"
-                data-bs-placement="top"
-                data-bs-original-title="ADD"
-              />
-            </button>
-            <button className="btn">
-              <img
-                className="b1"
-                src="https://cdn-icons-png.flaticon.com/128/833/833533.png"
-                alt="edit"
-                data-bs-toggle="tooltip"
-                data-bs-placement="top"
-                data-bs-original-title="Edit"
-              />
-            </button>
-            <button className="btn">
-              <img
-                className="b1"
-                src="https://cdn-icons-png.flaticon.com/128/9386/9386918.png"
-                alt="profile"
-                data-bs-toggle="tooltip"
-                data-bs-placement="top"
-                data-bs-original-title="profile"
-              />
-            </button>
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip>playlist</Tooltip>}
+            >
+              <button className="btn">
+                <img
+                  className="b1"
+                  src="https://cdn-icons-png.flaticon.com/128/6878/6878705.png"
+                  alt="PlayList"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  data-bs-original-title="PlayList"
+                />
+              </button>
+            </OverlayTrigger>
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip>notifications</Tooltip>}
+            >
+              <button className="btn">
+                <img
+                  className="b1"
+                  src="https://cdn-icons-png.flaticon.com/128/10274/10274647.png"
+                  alt="notification"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  data-bs-original-title="notifications"
+                />
+              </button>
+            </OverlayTrigger>
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip>Add Task</Tooltip>}
+            >
+              <button className="btn" onClick={handleClick}>
+                <img
+                  className="b2"
+                  src="https://cdn-icons-png.flaticon.com/128/4315/4315609.png"
+                  alt="add"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  data-bs-original-title="ADD"
+                />
+              </button>
+            </OverlayTrigger>
+            <OverlayTrigger placement="top" overlay={<Tooltip>Edit</Tooltip>}>
+              <button className="btn">
+                <img
+                  className="b1"
+                  src="https://cdn-icons-png.flaticon.com/128/833/833533.png"
+                  alt="edit"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  data-bs-original-title="Edit"
+                />
+              </button>
+            </OverlayTrigger>
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip>profile</Tooltip>}
+            >
+              <button className="btn">
+                <img
+                  className="b1"
+                  src="https://cdn-icons-png.flaticon.com/128/9386/9386918.png"
+                  alt="profile"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  data-bs-original-title="profile"
+                />
+              </button>
+            </OverlayTrigger>
           </div>
         </div>
       </div>

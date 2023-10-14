@@ -1,9 +1,9 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.css";
-import Quotes from "./utilities/HomePage/Quotes";
 import TODO from "./utilities/HomePage/TODO";
 import LoginPage from "./utilities/LoginPage/LoginPage";
 import TaskList from "./utilities/TaskBar/TaskList";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
