@@ -6,8 +6,9 @@
     "storage",
     "tabs"
   ],
-  "background": {
-    "sevice_worker": "background.js"
+  "actions": {
+    "default_popup": "index.html",
+    "default_title": "Dobule_Trouble"
   },
   "manifest_version": 3
 }
