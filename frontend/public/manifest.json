@@ -10,5 +10,6 @@
     "default_popup": "index.html",
     "default_title": "Dobule_Trouble"
   },
+  "content_security_policy": "style-src 'self' maxcdn.bootstrapcdn.com https://cdn.jsdelivr.net; ...",
   "manifest_version": 3
 }
