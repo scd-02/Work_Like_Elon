@@ -40,10 +40,10 @@ const LoginPage = () => {
           </div>
           <div className="form">
             <div>
-              <label class="form-label ">UserName *</label>
+              <label className="form-label ">UserName *</label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 placeholder="Username or e-mail"
                 value={userName}
                 onChange={handleChangeUsername}
@@ -51,10 +51,10 @@ const LoginPage = () => {
               />
             </div>
             <div>
-              <label class="form-label">Password *</label>
+              <label className="form-label">Password *</label>
               <input
                 type="password"
-                class="form-control"
+                className="form-control"
                 placeholder="Password"
                 value={password}
                 onChange={handleChangePassword}
@@ -67,7 +67,7 @@ const LoginPage = () => {
             <div className="btn d-flex justify-content-center">
               <button
                 type="submit"
-                class="btn btn-outline-success"
+                className="btn btn-outline-success"
                 onClick={handleClick}
               >
                 Login
