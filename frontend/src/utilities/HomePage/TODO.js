@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+/* global chrome */
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../Components/Header";
 import "../HomePage/TODO.css";
@@ -6,18 +7,28 @@ import "../TaskBar/TaskList";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 
-// import Quotes from './Quotes';
+import Quotes from "./Quotes";
 
 const TODO = () => {
-  // const {author, quote} = Quotes();
+  const { author, quote } = Quotes();
 
   // const deleteItem = (index) => {
   //   let temp = list.filter((item, i) => i !== index);
   //   setList(temp);
   // };
 
-  const items = localStorage.getItem("task-list");
-  console.log(items);
+  const [items, setItems] = useState([]);
+  const [loading, isLoading] = useState(true);
+  useEffect(() => {
+    chrome.storage.local.get(["task_list"]).then((res) => {
+      if (res.task_list) {
+        setItems(res.task_list);
+        isLoading(false);
+      }
+    });
+  }, []);
+
+  if (!loading) console.log(items);
 
   const navigate = useNavigate();
 
@@ -46,8 +57,8 @@ const TODO = () => {
           </div>
           <div className="quote d-flex justify-content-center">
             {/* integrate  api */}
-            {/* <q>{quote}</q>
-            <p>{author}</p> */}
+            <q>{quote}</q>
+            <p>{author}</p>
           </div>
 
           {/* add functionaliyt and navigation to each pages.... */}

@@ -1,3 +1,4 @@
+/* global chrome */
 import React, { useEffect, useState } from "react";
 // import ReactSwitch from "react-switch";
 import Header from "../Components/Header";
@@ -8,22 +9,25 @@ const TaskList = () => {
   const [time, setTime] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [list, setList] = useState(() => {
-    const savedTask = localStorage.getItem("task-list");
-    if (savedTask) return JSON.parse(savedTask);
-    else return [];
-  });
+  
+  const [list, setList] = useState([]);
+  useEffect(() => {
+    chrome.storage.local.get(["task_list"]).then((res) => {
+      if (res.task_list) {
+        setList(res.task_list);
+      }
+    });
+  }, []);
 
   useEffect(() => {
-    console.log(list);
-    localStorage.setItem("task-list", JSON.stringify(list));
-    console.log(localStorage);
+    chrome.storage.local.set({ task_list: list }).then(() => {
+      console.log("value is set");
+    });
   }, [list]);
 
   // const handleCheck = (val) => {
   //   setChecked(val);
   // };
-
   const handleTitleChange = (event) => {
     setTitle(event.target.value);
   };
