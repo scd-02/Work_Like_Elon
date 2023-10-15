@@ -123,21 +123,21 @@ const TaskList = () => {
               <div className="btn d-flex justify-content-around">
                 <button
                   type="submit"
-                  className="btn btn-outline-info"
+                  className="btn btn-outline-secondary"
                   onClick={handleSubmit}
                 >
                   Submit
                 </button>
                 <button
                   type="submit"
-                  className="btn btn-outline-info"
+                  className="btn btn-outline-secondary"
                   onClick={handleClick}
                 >
                   Home
                 </button>
                 <button
                   type="submit"
-                  className="btn btn-outline-info"
+                  className="btn btn-outline-secondary"
                   onClick={handleClear}
                 >
                   Clear

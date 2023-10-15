@@ -39,7 +39,10 @@ const TODO = () => {
   };
   const handlePlaylistClick = () => {
     navigate("/PlayList");
-  }
+  };
+  const handlePomodoroClick = () =>{
+    navigate("/pomodoro");
+  };
 
   return (
     <div className="todo">
@@ -78,7 +81,7 @@ const TODO = () => {
           {/* add functionaliyt and navigation to each pages.... */}
           <div className="footer d-flex justify-content-around">
             <OverlayTrigger placement="top" overlay={<Tooltip>playlist</Tooltip>}>
-              <button className="btn" onCick={handlePlaylistClick} >
+              <button className="btn" onClick={handlePlaylistClick} >
                 <img
                   className="b1"
                   src="https://cdn-icons-png.flaticon.com/128/6878/6878705.png"
@@ -102,14 +105,14 @@ const TODO = () => {
               </button>
             </OverlayTrigger>
             <OverlayTrigger placement="top" overlay={<Tooltip>Edit</Tooltip>}>
-              <button className="btn">
+              <button className="btn" onClick={handlePomodoroClick}>
                 <img
                   className="b1"
-                  src="https://cdn-icons-png.flaticon.com/128/3953/3953226.png"
-                  alt="Settings"
+                  src="https://cdn-icons-png.flaticon.com/128/12238/12238205.png"
+                  alt="Pomodoro"
                   data-bs-toggle="tooltip"
                   data-bs-placement="top"
-                  data-bs-original-title="Settings"
+                  data-bs-original-title="Pomodoro"
                 />
               </button>
             </OverlayTrigger>
