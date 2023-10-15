@@ -29,7 +29,12 @@
     list-style-type: none;
     display: inline-block;
 }
-.quote q{
+.quote{
+    padding: 30px;
+    justify-content: center;
+    align-items: center;
+}
+.quote q,.quote p{
     color: white;
     font-weight: bold;
 }
@@ -38,7 +43,6 @@
     top: 200px;
 } */
 .b1{
-    border: 2px solid #24F1F1;
     border-radius: 50%;
     width: 30px;
     height: 30px;
