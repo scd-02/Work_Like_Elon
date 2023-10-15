@@ -1,6 +1,6 @@
 /* global chrome */
 import React, { useEffect, useState } from "react";
-import Button from "../Components/Button";
+import { useNavigate } from "react-router-dom";
 // import ReactSwitch from "react-switch";
 import Header from "../Components/Header";
 import "../TaskBar/TaskList.css";
@@ -16,6 +16,7 @@ const TaskList = () => {
     chrome.storage.local.get(["task_list"]).then((res) => {
       if (res.task_list) {
         setList(res.task_list);
+        console.log(list);
       }
     });
   }, []);
@@ -23,6 +24,7 @@ const TaskList = () => {
   useEffect(() => {
     chrome.storage.local.set({ task_list: list }).then(() => {
       console.log("value is set");
+      console.log(list);
     });
   }, [list]);
 
@@ -44,7 +46,10 @@ const TaskList = () => {
     setDescription("");
     setTime("");
   };
-
+  const navigate = useNavigate();
+  const handleClick = () => {
+      navigate("/TODO");
+  }
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -65,6 +70,10 @@ const TaskList = () => {
     setTitle("");
     setDescription("");
     setTime("");
+
+    setTimeout(()=>{
+      navigate("/TODO");
+    },1000)
   };
 
   return (
@@ -122,11 +131,17 @@ const TaskList = () => {
                 <button
                   type="submit"
                   className="btn btn-outline-info"
+                  onClick={handleClick}
+                >
+                  Home
+                </button>
+                <button
+                  type="submit"
+                  className="btn btn-outline-info"
                   onClick={handleClear}
                 >
                   Clear
                 </button>
-                <Button />
               </div>
             </div>
             <div className="footer">

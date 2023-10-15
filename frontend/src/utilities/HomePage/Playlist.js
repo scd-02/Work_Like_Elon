@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Button from "../Components/Button";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../Components/Header";
 
 const PlayList = () => {
@@ -13,7 +13,10 @@ const PlayList = () => {
     
         setUrl("");
       };
-    
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate("/TODO");
+    }
     return (  
         <div className="PlayList">
             <div className="Content">
@@ -46,9 +49,13 @@ const PlayList = () => {
                             >
                             Clear
                             </button>
-                        </div>
-                        <div className="btn d-flex justify-content-around">
-                            <Button />
+                            <button 
+                            type="submit"
+                            className="btn btn-outline-success"
+                            onClick={handleClick}
+                            >
+                            Home
+                            </button>
                         </div>
                     </form>
                 </div>

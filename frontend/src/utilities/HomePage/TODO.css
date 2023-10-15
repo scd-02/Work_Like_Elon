@@ -22,15 +22,21 @@
 .list-container h4{
     color: #FFFFFF;
 }
+.list ul{
+    overflow-y: scroll;
+    padding-right: 20px;
+    padding-bottom: 0px;
+    height: 100px;
+}
 .list ul li{
-    background-color: #e8e6e6;
-    height: 30px;
+    background-color: #b6c6f7;
+    color: #000000;
     border-radius: 5px;
     list-style-type: none;
-    display: inline-block;
+    line-height: 1em;
 }
 .quote{
-    padding: 30px;
+    padding: 0px 40px;
     justify-content: center;
     align-items: center;
 }

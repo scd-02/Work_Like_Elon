@@ -12,14 +12,14 @@ import Quotes from "./Quotes";
 const TODO = () => {
   const { author, quote} = Quotes();
 
-  // const deleteItem = (index) => {
-  //   let temp = list.filter((item, i) => i !== index);
-  //   setList(temp);
-  // };
+  const deleteItem = (index) => {
+    let temp = items.filter((item, i) => i !== index);
+    setItems(temp);
+  };
 
   const [items, setItems] = useState([]);
-  const [loading, isLoading] = useState(false);
-
+  const [loading, isLoading] = useState(true);
+  
   useEffect(() => {
     chrome.storage.local.get(["task_list"]).then((res) => {
       if (res.task_list) {
@@ -53,11 +53,21 @@ const TODO = () => {
           <div className="list-container">
             <h4>Today</h4>
             <div className="list">
-              {/* <ul>
-                  {list.length > 0 && 
-                    list.map((item, i) => <li className="mb-2" onClick={() => deleteItem(i)} >{item}</li>)
+              <ul>
+                  {!loading && items.length > 0 && items.map((item) => (
+                      <li key={item.id}
+                      ClassName="mb-2"
+                      onClick={() => deleteItem(item.id)}
+                      >
+                        <p className="mb-1">
+                          <b>{item.title}:</b> {item.description}
+                          <br />
+                          Duration:{item.time}  
+                        </p>
+                      </li>
+                    ))
                   }
-                </ul> */}
+              </ul>
             </div>
           </div>
           <div className="quote">
@@ -65,14 +75,10 @@ const TODO = () => {
             <q>{quote}</q>
             <p>---{author}</p>
           </div>
-
           {/* add functionaliyt and navigation to each pages.... */}
           <div className="footer d-flex justify-content-around">
-            <OverlayTrigger
-              placement="top"
-              overlay={<Tooltip>playlist</Tooltip>}
-            >
-              <button className="btn" onClick={handlePlaylistClick}>
+            <OverlayTrigger placement="top" overlay={<Tooltip>playlist</Tooltip>}>
+              <button className="btn" onCick={handlePlaylistClick} >
                 <img
                   className="b1"
                   src="https://cdn-icons-png.flaticon.com/128/6878/6878705.png"
@@ -83,10 +89,7 @@ const TODO = () => {
                 />
               </button>
             </OverlayTrigger>
-            <OverlayTrigger
-              placement="top"
-              overlay={<Tooltip>Add Task</Tooltip>}
-            >
+            <OverlayTrigger placement="top" overlay={<Tooltip>Add Task</Tooltip>}>
               <button className="btn" onClick={handleClick}>
                 <img
                   className="b2"
