@@ -38,7 +38,7 @@ const Quotes = () => {
       .catch((error) => console.log(error));
   }, []);
 
-  return { author, quote};
+  return { author, quote };
 };
 
 export default Quotes;

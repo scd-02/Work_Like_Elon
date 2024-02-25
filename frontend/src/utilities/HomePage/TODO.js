@@ -31,7 +31,7 @@ const TODO = () => {
 
   if (!loading) console.log(items);
 
-  //For navigation
+
   const navigate = useNavigate();
 
   const handleClick = () => {

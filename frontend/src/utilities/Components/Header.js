@@ -8,7 +8,7 @@ const Header = () => {
                     <a className="navbar-brand" href="#">
                       <img src={logo} alt="Logo" width="40" />
                     </a>
-                    <h2>DO-IT!</h2>
+                    <h2 style={{color: 'black'}}>DO-IT!</h2>
                     <a className="navbar-brand" href="#">
                       <img src={logo} alt="Logo" width="40" />
                     </a>

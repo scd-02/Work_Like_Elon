@@ -16,24 +16,37 @@
     padding-top: 5px;
     color: #FFFFFF;
 }
-.list-container{
-    padding-left: 40px;
+.list-container {
+    margin-top: 20px;
+    padding: 20px;
 }
-.list-container h4{
+
+.list-container h4 {
     color: #FFFFFF;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
-.list ul{
-    overflow-y: scroll;
+
+.list ul {
+    overflow-y: auto;
+    max-height: 200px;
     padding-right: 20px;
     padding-bottom: 0px;
-    height: 100px;
+    margin: 0;
+    list-style-type: none;
 }
-.list ul li{
+
+.list ul li {
     background-color: #b6c6f7;
     color: #000000;
     border-radius: 5px;
-    list-style-type: none;
-    line-height: 1em;
+    margin-bottom: 10px;
+    padding: 10px;
+    line-height: 1.4em;
+}
+
+.list ul li:hover {
+    background-color: #a0b9ff;
 }
 .quote{
     padding: 0px 40px;
