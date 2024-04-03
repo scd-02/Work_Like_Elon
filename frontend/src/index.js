@@ -4,11 +4,22 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { MemoryRouter as Router } from "react-router-dom";
+import { ThemeProvider } from "react-bootstrap";
+
+const theme = {
+  colors: {
+    primary: "#b85600",
+    secondary: "#08002b",
+    bg: "#220045",
+  },
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Router>
-    <App />
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
   </Router>
 );
 
